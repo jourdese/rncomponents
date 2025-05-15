@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 // Example component using useState with different data types
 const UseStateExample = () => {
@@ -27,7 +27,7 @@ const UseStateExample = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <Text style={styles.title}>useState Hook Tutorial</Text>
       
       {/* Number State Example */}
@@ -109,11 +109,15 @@ const UseStateExample = () => {
           <Text key={index} style={styles.text}>{item}</Text>
         ))}
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  contentContainer: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
   container: {
     flex: 1,
     padding: 20,

@@ -1,5 +1,5 @@
 import { useId } from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 // Form Field Component using useId
 const FormField = ({ label, type = 'text' }) => {
@@ -50,7 +50,7 @@ const UseIdExample = () => {
   const exampleId = useId();
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>   
       <Text style={styles.title} nativeID={mainId}>
         useId Hook Tutorial
       </Text>
@@ -122,11 +122,15 @@ const UseIdExample = () => {
           • Prefix for multiple IDs
         </Text>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  contentContainer: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
   container: {
     flex: 1,
     padding: 20,

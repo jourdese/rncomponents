@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const UseRefExample = () => {
   // Ref for TextInput
@@ -56,7 +56,7 @@ const UseRefExample = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <Text style={styles.title}>useRef Hook Tutorial</Text>
 
       {/* Example 1: Ref to access DOM (TextInput) */}
@@ -159,11 +159,15 @@ const UseRefExample = () => {
           • Can store any mutable value
         </Text>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  contentContainer: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
   container: {
     flex: 1,
     padding: 20,

@@ -1,5 +1,5 @@
 import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 // Custom Input Component with imperative handle
 const CustomInput = forwardRef((props, ref) => {
@@ -114,7 +114,7 @@ const UseImperativeHandleExample = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <Text style={styles.title}>useImperativeHandle Hook Tutorial</Text>
 
       {/* Single Input Example */}
@@ -184,11 +184,15 @@ const UseImperativeHandleExample = () => {
           • Document exposed methods
         </Text>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({  
+  contentContainer: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
   container: {
     flex: 1,
     padding: 20,

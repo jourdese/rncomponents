@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Animated } from 'react-native';
+import { Animated, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const UseLayoutEffectExample = () => {
   const [show, setShow] = useState(false);
@@ -27,7 +27,7 @@ const UseLayoutEffectExample = () => {
   }, [show, fadeAnim]);
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <Text style={styles.title}>useLayoutEffect Hook Tutorial</Text>
 
       {/* Toggle Animation Example */}
@@ -125,11 +125,15 @@ const UseLayoutEffectExample = () => {
           • Keep operations fast to avoid blocking
         </Text>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  contentContainer: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
   container: {
     flex: 1,
     padding: 20,

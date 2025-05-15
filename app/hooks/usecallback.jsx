@@ -1,5 +1,5 @@
 import { memo, useCallback, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 // Memoized child component that receives callbacks
 const ExpensiveComponent = memo(({ onIncrement, onDecrement, value, label }) => {
@@ -45,7 +45,7 @@ const UseCallbackExample = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <Text style={styles.title}>useCallback Hook Tutorial</Text>
       
       {/* Without useCallback */}
@@ -96,11 +96,15 @@ const UseCallbackExample = () => {
       <Text style={styles.note}>
         Note: Check the console logs to see when components re-render
       </Text>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  contentContainer: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
   container: {
     flex: 1,
     padding: 20,
