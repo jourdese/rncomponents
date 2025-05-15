@@ -8,22 +8,22 @@ export default function Home() {
   const [componentsExpanded, setComponentsExpanded] = useState(false);
   const [hooksExpanded, setHooksExpanded] = useState(false);
 
-  // List of all components to showcase
+  // List of components
   const components = [
-    'View',
-    'Text',
-    'Image',
-    'ScrollView',
-    'TextInput',
-    'Pressable',
-    'TouchableOpacity',
-    'TouchableHighlight',
-    'TouchableWithoutFeedback',
-    'Modal',
-    'FlatList',
-    'SectionList',
-    'ActivityIndicator',
-    'Button'
+    'view',
+    'text',
+    'image',
+    'scrollview',
+    'textinput',
+    'pressable',
+    'touchableopacity',
+    'touchablehighlight',
+    'touchablewithoutfeedback',
+    'modal',
+    'flatlist',
+    'sectionlist',
+    'activityindicator',
+    'button',
   ];
 
   // List of hooks tutorials
@@ -74,7 +74,7 @@ export default function Home() {
           expanded={componentsExpanded}
           onToggle={() => setComponentsExpanded(!componentsExpanded)}
           items={components}
-          onItemPress={(component) => router.push(`/${component.toLowerCase()}`)}
+          onItemPress={(component) => router.push(`/components/${component.toLowerCase()}`)}
         />
 
         {/* Hooks Section */}

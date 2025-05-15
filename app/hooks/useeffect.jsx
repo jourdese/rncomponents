@@ -69,65 +69,65 @@ const UseEffectExample = () => {
   }, [isTimerRunning]);
 
   return (
-      <View style={styles.container}>
-        <Text style={styles.title}>useEffect Hook Tutorial</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>useEffect Hook Tutorial</Text>
 
-        {/* Example 1: Basic Counter */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Effect on State Change</Text>
-          <Text style={styles.text}>Count: {count}</Text>
-          <TouchableOpacity
-              style={styles.button}
-              onPress={() => setCount((prev) => prev + 1)}
-          >
-            <Text style={styles.buttonText}>Increment</Text>
-          </TouchableOpacity>
-          <Text style={styles.note}>
-            Check console for logs when count changes
-          </Text>
-        </View>
-
-        {/* Example 2: Input with Effect */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Effect with Dependencies</Text>
-          <TextInput
-              style={styles.input}
-              value={name}
-              onChangeText={setName}
-              placeholder="Enter your name"
-          />
-          <Text style={styles.text}>
-            {name ? `Hello, ${name}!` : 'Please enter your name'}
-          </Text>
-        </View>
-
-        {/* Example 3: Device Dimensions and App State */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Effect with Cleanup (Dimensions & App State)</Text>
-          <Text style={styles.text}>
-            Width: {dimensions.width}px{'\n'}
-            Height: {dimensions.height}px{'\n'}
-            App State: {appState}
-          </Text>
-          <Text style={styles.note}>
-            Rotate device or change app state to see updates
-          </Text>
-        </View>
-
-        {/* Example 4: Timer with Cleanup */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Timer with Cleanup</Text>
-          <Text style={styles.text}>Timer: {timer} seconds</Text>
-          <TouchableOpacity
-              style={[styles.button, isTimerRunning && styles.stopButton]}
-              onPress={() => setIsTimerRunning(!isTimerRunning)}
-          >
-            <Text style={styles.buttonText}>
-              {isTimerRunning ? 'Stop Timer' : 'Start Timer'}
-            </Text>
-          </TouchableOpacity>
-        </View>
+      {/* Example 1: Basic Counter */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Effect on State Change</Text>
+        <Text style={styles.text}>Count: {count}</Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => setCount((prev) => prev + 1)}
+        >
+          <Text style={styles.buttonText}>Increment</Text>
+        </TouchableOpacity>
+        <Text style={styles.note}>
+          Check console for logs when count changes
+        </Text>
       </View>
+
+      {/* Example 2: Input with Effect */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Effect with Dependencies</Text>
+        <TextInput
+          style={styles.input}
+          value={name}
+          onChangeText={setName}
+          placeholder="Enter your name"
+        />
+        <Text style={styles.text}>
+          {name ? `Hello, ${name}!` : 'Please enter your name'}
+        </Text>
+      </View>
+
+      {/* Example 3: Device Dimensions and App State */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Effect with Cleanup (Dimensions & App State)</Text>
+        <Text style={styles.text}>
+          Width: {dimensions.width}px{'\n'}
+          Height: {dimensions.height}px{'\n'}
+          App State: {appState}
+        </Text>
+        <Text style={styles.note}>
+          Rotate device or change app state to see updates
+        </Text>
+      </View>
+
+      {/* Example 4: Timer with Cleanup */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Timer with Cleanup</Text>
+        <Text style={styles.text}>Timer: {timer} seconds</Text>
+        <TouchableOpacity
+          style={[styles.button, isTimerRunning && styles.stopButton]}
+          onPress={() => setIsTimerRunning(!isTimerRunning)}
+        >
+          <Text style={styles.buttonText}>
+            {isTimerRunning ? 'Stop Timer' : 'Start Timer'}
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 };
 
